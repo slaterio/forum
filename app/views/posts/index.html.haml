@@ -1,1 +1,7 @@
-%h1 This is the index view placeholder text
+- @posts.each do |post|
+  %h2= post.title
+  %p
+    published at
+    = time_ago_in_words(post.created_at)
+
+= link_to "New", new_post_path
