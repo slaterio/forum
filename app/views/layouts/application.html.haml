@@ -1,0 +1,21 @@
+!!!
+%html
+%head
+	%title Rails Forum
+	= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+	%link{ "rel" => "stylesheet", "href" => "http://fonts.googleapis.com/css?family=Lato:400,300,700", "type" => "text/css"}
+	= javascript_include_tag 'application', 'data-turbolinks-track' => true
+	= csrf_meta_tags
+%body
+	%header.main_header.clearfix
+		#logo
+			%p Rails Forum
+		#buttons
+		= link_to "New", new_post_path
+
+	.wrapper
+		%p.notice= notice
+		%p.alert= alert
+
+	.wrapper
+		= yield
